@@ -1,0 +1,46 @@
+package software.ulpgc.aoc;
+
+import org.junit.jupiter.api.Test;
+import software.ulpgc.aoc.controller.WarehouseController;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class WarehouseControllerTest {
+
+    @Test
+    void testAnalyzeInitialAccessibility_WithExample() {
+        // ejemplo
+        String exampleInput = """
+            ..@@.@@@@.
+            @@@.@.@.@@
+            @@@@@.@.@@
+            @.@@@@..@.
+            @@.@@@@.@@
+            .@@@@@@@.@
+            .@.@.@.@@@
+            @.@@@.@@@@
+            .@@@@@@@@.
+            @.@.@@@.@.
+            """;
+        
+        // El resultado esperado para el ejemplo anterior
+        long expectedResult = 13; 
+
+        WarehouseController controller = new WarehouseController();
+        long result = controller.analyzeInitialAccessibility(exampleInput);
+
+        assertEquals(expectedResult, result, 
+            "El análisis de accesibilidad inicial no devuelve el valor esperado para el ejemplo.");
+    }
+
+    @Test
+    void testAnalyzeInitialAccessibility_EmptyInput() {
+        // Caso input vacío
+        String emptyInput = "";
+        
+        long result = new WarehouseController().analyzeInitialAccessibility(emptyInput);
+
+        // Asumiendo que si no hay mapa, el resultado es 0
+        assertEquals(0, result, "Con una entrada vacía el resultado debería ser 0.");
+    }
+}
