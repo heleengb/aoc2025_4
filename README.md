@@ -1,4 +1,4 @@
-# Reto del Almacén de Arrobas - 1.0
+# Reto 4
 
 **Arquitectura, estilo MVC (Model-View-Controller) con Patrón Command:**
 El proyecto está estructurado para separar claramente los datos de la lógica de negocio y la presentación. En el paquete **model**, la clase `WarehouseMap` actúa como modelo de dominio, encapsulando la matriz del almacén y la lógica geométrica de vecindad y accesibilidad. En el paquete **view**, `ConsoleResultPrinter` se limita a mostrar el total calculado. En **controller**, `WarehouseController` organiza el flujo: convierte los datos de entrada en el modelo y selecciona el comando adecuado para ejecutar (contar o borrar y contar total).
